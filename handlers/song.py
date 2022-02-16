@@ -22,7 +22,7 @@ def song(client, message):
     for i in message.command[1:]:
         query += ' ' + str(i)
     print(query)
-    m = message.reply('𝗙𝗶𝗻𝗱𝗶𝗻𝗴 𝗧𝗵𝗲 𝗦𝗼𝗻𝗴 𝗙𝗼𝗿𝗺 𝗦𝗲𝗿𝘃𝗲𝗿...')
+    m = message.reply('🎧 𝘔𝘦𝘯𝘤𝘢𝘳𝘪 𝘓𝘢𝘨𝘶 . . .')
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
@@ -41,17 +41,17 @@ def song(client, message):
 
     except Exception as e:
         m.edit(
-            "𝗦𝗼𝗻𝗴 𝗡𝗼𝘁 𝗙𝗼𝘂𝗻𝗱..."
+            "🎧 𝘓𝘢𝘨𝘶 𝘵𝘪𝘥𝘢𝘬 𝘥𝘪𝘵𝘦𝘮𝘶𝘬𝘢𝘯"
         )
         print(str(e))
         return
-    m.edit("𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱 𝗦𝗼𝗻𝗴 𝗙𝗿𝗼𝗺 𝗦𝗲𝗿𝘃𝗲𝗿...")
+    m.edit("𝘋𝘰𝘸𝘯𝘭𝘰𝘢𝘥 𝘥𝘢𝘳𝘪 𝘒𝘢𝘨𝘶𝘳𝘢 𝘚𝘦𝘳𝘷𝘦𝘳")
     try:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = '**🎵 𝗨𝗽𝗹𝗼𝗮𝗱𝗲𝗱 𝗕𝘆 : @AboutHexor️**'
+        rep = '**🎧 Diupload Oleh : @TripleNineee**'
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
@@ -59,7 +59,7 @@ def song(client, message):
         message.reply_audio(audio_file, caption=rep, thumb=thumb_name, parse_mode='md', title=title, duration=dur)
         m.delete()
     except Exception as e:
-        m.edit('𝗛𝗲𝘅𝗼𝗿 𝗡𝗼𝘁 𝗚𝗶𝘃𝗲 𝗣𝗲𝗿𝗺𝗶𝘀𝘀𝗶𝗼𝗻 𝗙𝗼𝗿 𝗚𝗶𝘃𝗶𝗻𝗴 𝗬𝗼𝘂 𝗦𝗼𝗻𝗴 𝗙𝗿𝗼𝗺 𝗦𝗲𝗿𝘃𝗲𝗿...')
+        m.edit('Anda tidak diberikan izin untuk mengambil lagu dari Kagura server')
         print(e)
 
     try:
