@@ -17,13 +17,13 @@ async def start(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "🔺 ᴏᴡɴᴇʀ 🔺", url="https://t.me/Sanki_Owner")
+                        "🔺 ᴏᴡɴᴇʀ 🔺", url="https://t.me/TripleNineee")
                   ],[
                     InlineKeyboardButton(
-                        "🔺 ᴄʜᴀɴɴᴇʟ 🔺", url="https://t.me/AboutHexor"
+                        "🔺 ᴄʜᴀɴɴᴇʟ 🔺", url="https://t.me/inibotsaya"
                     ),
                     InlineKeyboardButton(
-                        "🔺 ɢʀᴏᴜᴘ 🔺", url="https://t.me/eSportClan"
+                        "🔺 ɢʀᴏᴜᴘ 🔺", url="https://t.me/Kenzusupport"
                     )
                 ],[ 
                     InlineKeyboardButton(
