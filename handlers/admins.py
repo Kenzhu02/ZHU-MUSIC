@@ -18,7 +18,7 @@ ACTV_CALLS = []
 @authorized_users_only
 async def pause(_, message: Message):
     await callsmusic.pytgcalls.pause_stream(message.chat.id)
-    await message.reply_text("𝗣𝗮𝘂𝘀𝗲𝗱..!")
+    await message.reply_text("⏸️ **Kagura Music**")
 
 
 @Client.on_message(command(["resume"]) & other_filters)
@@ -26,7 +26,7 @@ async def pause(_, message: Message):
 @authorized_users_only
 async def resume(_, message: Message):
     await callsmusic.pytgcalls.resume_stream(message.chat.id)
-    await message.reply_text("𝗥𝗲𝘀𝘂𝗺𝗲𝗱....!")
+    await message.reply_text("⏯️ **Kagura Music**")
 
 
 @Client.on_message(command(["end"]) & other_filters)
@@ -39,7 +39,7 @@ async def stop(_, message: Message):
         pass
 
     await callsmusic.pytgcalls.leave_group_call(message.chat.id)
-    await message.reply_text("𝗘𝘀𝗽𝗼𝗿𝘁 𝗦𝘁𝗿𝗲𝗮𝗺 𝗘𝗻𝗱𝗲𝗱..!")
+    await message.reply_text("⏹️ **Kagura Music**")
 
 @Client.on_message(command(["skip"]) & other_filters)
 @errors
@@ -50,7 +50,7 @@ async def skip(_, message: Message):
     for x in callsmusic.pytgcalls.active_calls:
         ACTV_CALLS.append(int(x.chat_id))
     if int(chat_id) not in ACTV_CALLS:
-        await message.reply_text("𝗡𝗼𝘁𝗵𝗶𝗻𝗴 𝗔𝗻𝘆𝘁𝗵𝗶𝗻𝗴 𝗗𝗲𝘁𝗲𝗰𝘁..📡")
+        await message.reply_text("⛔ Antrian Kosong")
     else:
         queues.task_done(chat_id)
         
@@ -65,4 +65,4 @@ async def skip(_, message: Message):
                     ),
                 ),
             )
-    await message.reply_text("𝗦𝗸𝗶𝗽𝗽𝗲𝗱...🚩")
+    await message.reply_text("⏭️ **Kagura Music**")
