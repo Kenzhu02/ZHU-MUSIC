@@ -15,17 +15,17 @@ async def broadcast(_, message: Message):
     if message.from_user.id not in SUDO_USERS:
         return
     else:
-        wtf = await message.reply("`Starting Broadcast...`")
+        wtf = await message.reply("Broadcast terus pantek")
         if not message.reply_to_message:
-            await wtf.edit("Reply On Your Message!")
+            await wtf.edit("Apa yang Harus saya kirim bodoh")
             return
         lmao = message.reply_to_message.text
         async for dialog in veez.iter_dialogs():
             try:
                 await veez.send_message(dialog.chat.id, lmao)
                 sent = sent+1
-                await wtf.edit(f"`Broadcasting.....` \n\n**sent to:** `{sent}` chats \n**failed in:** {failed} chats")
+                await wtf.edit(f"Ini data pengiriman tod \n\n**Terkirim:** `{sent}` chats \n**Gagal :** {failed} chats")
                 await asyncio.sleep(3)
             except:
                 failed=failed+1
-        await message.reply_text(f"`Succesfull` \n\n**sent to:** `{sent}` chats \n**failed in:** {failed} chats")
+        await message.reply_text(f"Ini hasilnya tod \n\n**Terkirim:** `{sent}` chats \n**Gagal:** {failed} chats")
