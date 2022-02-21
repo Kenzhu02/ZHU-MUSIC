@@ -4,9 +4,6 @@ from callsmusic import run
 from config import API_ID, API_HASH, BOT_TOKEN
 
 
-if __name__ == '__main__':
-    run(main())
-
 bot = Bot(
     ":memory:",
     API_ID,
